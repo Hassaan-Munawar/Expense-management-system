@@ -41,59 +41,57 @@ function App() {
   let totalExpense = transaction.reduce((acc, curr) => {
     return curr.type === 'expense' ? acc + Number(curr.amount) : acc;
   }, 0);
-
   let balance = totalIncome - totalExpense;
-
   return (
     <center>
-    <div className="App">
-      <h1>Expense Management System</h1>
-      <div className="summary">
-        <div className="summary-item">
-          <p>Total Income</p>
-          <p>${totalIncome}</p>
+      <div className="App">
+        <h1>Expense Management System</h1>
+        <div className="summary">
+          <div className="summary-item">
+            <p>Total Income</p>
+            <p>${totalIncome}</p>
+          </div>
+          <div className="summary-item">
+            <p>Total Expense</p>
+            <p>${totalExpense}</p>
+          </div>
+          <div className="summary-item">
+            <p>Balance</p>
+            <p>${balance}</p>
+          </div>
         </div>
-        <div className="summary-item">
-          <p>Total Expense</p>
-          <p>${totalExpense}</p>
+        <div className="transaction-input">
+          <input
+            onChange={(e) => setAmount(e.target.value)}
+            value={amount}
+            type="number"
+            placeholder="Enter amount"
+          />
+          <select
+            onChange={(e) => setType(e.target.value)}
+            value={type}
+          >
+            <option value="income">Income</option>
+            <option value="expense">Expense</option>
+          </select>
+          <button onClick={handleTransactions}>
+            {isEditing ? "Update" : "Submit"}
+          </button>
         </div>
-        <div className="summary-item">
-          <p>Balance</p>
-          <p>${balance}</p>
+        <div className="transaction-list">
+          <ul>
+            {transaction.map((data, index) => (
+              <li key={index}>
+                <span>${data.amount} - {data.type}</span>
+                <div className="actions">
+                  <button onClick={() => editExpense(index)}>Edit</button>
+                  <button onClick={() => delExpense(index)}>Delete</button>
+                </div>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
-      <div className="transaction-input">
-        <input
-          onChange={(e) => setAmount(e.target.value)}
-          value={amount}
-          type="number"
-          placeholder="Enter amount"
-        />
-        <select
-          onChange={(e) => setType(e.target.value)}
-          value={type}
-        >
-          <option value="income">Income</option>
-          <option value="expense">Expense</option>
-        </select>
-        <button onClick={handleTransactions}>
-          {isEditing ? "Update" : "Submit"}
-        </button>
-      </div>
-      <div className="transaction-list">
-        <ul>
-          {transaction.map((data, index) => (
-            <li key={index}>
-              <span>${data.amount} - {data.type}</span>
-              <div className="actions">
-                <button onClick={() => editExpense(index)}>Edit</button>
-                <button onClick={() => delExpense(index)}>Delete</button>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
     </center>
   );
 }
