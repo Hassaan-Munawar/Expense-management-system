@@ -1,0 +1,218 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f6fa;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.App {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 600px; 
+  color: #333;
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+  color: #4a4a4a;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.summary {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap; 
+}
+
+.summary-item {
+  text-align: center;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 10px;
+  flex: 1;
+  margin: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+}
+
+.summary-item p:first-child {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #999;
+}
+
+.summary-item p:last-child {
+  margin: 5px 0 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.transaction-input {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap; 
+  margin-bottom: 20px;
+}
+
+.transaction-input input,
+.transaction-input select,
+.transaction-input button {
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #ddd;
+  font-size: 1rem;
+  flex: 1;
+  min-width: calc(50% - 10px); 
+  box-sizing: border-box;
+}
+
+.transaction-input button {
+  background-color: #4c8bf5;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  min-width: 100%; 
+}
+
+.transaction-input button:hover {
+  background-color: #3773d0;
+  transform: translateY(-2px);
+}
+
+.transaction-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.transaction-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  margin-bottom: 10px;
+  border: 2px solid #ddd;
+  transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+  box-sizing: border-box;
+  flex-wrap: wrap; 
+}
+
+.transaction-list li:hover {
+  transform: translateY(-5px);
+  background-color: #ffffff;
+  border-color: #4c8bf5;
+}
+
+.transaction-list li span {
+  flex: 1;
+  font-size: 1rem;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap; 
+}
+
+.actions button {
+  width: 65px;
+  padding: 8px 10px;
+  border: none;
+  background-color: #ff9f43;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.actions button:hover {
+  background-color: #d4880b;
+  transform: translateY(-2px);
+}
+
+.actions button:last-child {
+  background-color: #f34c4c;
+}
+
+.actions button:last-child:hover {
+  background-color: #d03a3a;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .summary-item {
+    padding: 10px;
+  }
+
+  .transaction-input input,
+  .transaction-input select {
+    min-width: 100%; 
+  }
+
+  .transaction-input button {
+    padding: 12px;
+    font-size: 1rem;
+  }
+
+  .transaction-list li {
+    font-size: 0.875rem;
+    padding: 10px;
+  }
+
+  .actions button {
+    padding: 8px;
+    font-size: 0.875rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #1c1c1c;
+  }
+
+  .App {
+    background-color: #333;
+    color: #fff;
+  }
+
+  .summary-item {
+    background-color: #444;
+    color: #fff;
+  }
+
+  .transaction-input input,
+  .transaction-input select {
+    background-color: #555;
+    color: #fff;
+    border: 2px solid #666;
+  }
+
+  .transaction-list li {
+    background-color: #444;
+    border-color: #555;
+  }
+}
+
+
