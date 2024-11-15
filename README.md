@@ -1,6 +1,6 @@
 🚀 My React Expense Management System! 💻📊
 
-I’m thrilled to introduce my latest project — an Expense Management System built with React, designed to simplify how you manage your income and expenses. This app is crafted to provide a seamless user experience with powerful features and a responsive interface, leveraging React's state management capabilities.
+I’m thrilled to introduce my project — an Expense Management System built with React, designed to simplify how you manage your income and expenses. This app is crafted to provide a seamless user experience with powerful features and a responsive interface, leveraging React's state management capabilities.
 
 🔑 Key Features & Highlights:
 
@@ -27,10 +27,3 @@ React for dynamic user interfaces
 React Hooks (useState) for managing states and updating data in real time
 CSS for responsive, visually appealing designs
 JavaScript for core functionality
-
-💡 Upcoming Features:
-CSV Export for transaction reports
-Advanced analytics for better budget insights
-Multi-user support to manage shared expenses
-
-Hosted Link : https://lnkd.in/eZrNz7nS
